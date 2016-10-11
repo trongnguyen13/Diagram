@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A9FF4E5-7647-4E50-A574-BF52B34CFFBE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Diagram</RootNamespace>
+    <AssemblyName>Diagram</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\editor-commons.xml" />
+    <Content Include="config\keyhandler-commons.xml" />
+    <Content Include="config\keyhandler-minimal.xml" />
+    <Content Include="config\layouteditor.xml" />
+    <Content Include="config\wfeditor-commons.xml" />
+    <Content Include="config\wfgraph-commons.xml" />
+    <Content Include="config\wftoolbar-commons.xml" />
+    <Content Include="css\process.css" />
+    <Content Include="css\wordpress.css" />
+    <Content Include="help\index-all.html" />
+    <Content Include="help\index.html" />
+    <Content Include="images\actor.gif" />
+    <Content Include="images\alignbottom.gif" />
+    <Content Include="images\aligncenter.gif" />
+    <Content Include="images\alignleft.gif" />
+    <Content Include="images\alignmiddle.gif" />
+    <Content Include="images\alignright.gif" />
+    <Content Include="images\aligntop.gif" />
+    <Content Include="images\arrow.gif" />
+    <Content Include="images\bell.png" />
+    <Content Include="images\bg.gif" />
+    <Content Include="images\block_end.gif" />
+    <Content Include="images\block_start.gif" />
+    <Content Include="images\bold.gif" />
+    <Content Include="images\bottom.gif" />
+    <Content Include="images\box.png" />
+    <Content Include="images\camera.gif" />
+    <Content Include="images\center.gif" />
+    <Content Include="images\classic_end.gif" />
+    <Content Include="images\classic_start.gif" />
+    <Content Include="images\cloud.gif" />
+    <Content Include="images\cmp-bg.gif" />
+    <Content Include="images\collapse.gif" />
+    <Content Include="images\connect.gif" />
+    <Content Include="images\connector.gif" />
+    <Content Include="images\console.gif" />
+    <Content Include="images\copy.gif" />
+    <Content Include="images\cube_green.png" />
+    <Content Include="images\cut.gif" />
+    <Content Include="images\cylinder.gif" />
+    <Content Include="images\delete.gif" />
+    <Content Include="images\diagram.gif" />
+    <Content Include="images\diamond_end.gif" />
+    <Content Include="images\diamond_start.gif" />
+    <Content Include="images\doubleellipse.gif" />
+    <Content Include="images\down.gif" />
+    <Content Include="images\draw\drawbg.jpg" />
+    <Content Include="images\draw\drawbgcolor.jpg" />
+    <Content Include="images\draw\drawfooter.jpg" />
+    <Content Include="images\draw\drawheader.jpg" />
+    <Content Include="images\draw\mxlogo.jpg" />
+    <Content Include="images\dude3.png" />
+    <Content Include="images\earth.png" />
+    <Content Include="images\ellipse.gif" />
+    <Content Include="images\entity.gif" />
+    <Content Include="images\expand.gif" />
+    <Content Include="images\fillcolor.gif" />
+    <Content Include="images\fit.gif" />
+    <Content Include="images\font.gif" />
+    <Content Include="images\fontcolor.gif" />
+    <Content Include="images\gear.gif" />
+    <Content Include="images\gear.png" />
+    <Content Include="images\grid.gif" />
+    <Content Include="images\group.gif" />
+    <Content Include="images\help.gif" />
+    <Content Include="images\hexagon.gif" />
+    <Content Include="images\hline.gif" />
+    <Content Include="images\house.gif" />
+    <Content Include="images\house.png" />
+    <Content Include="images\image.gif" />
+    <Content Include="images\italic.gif" />
+    <Content Include="images\left.gif" />
+    <Content Include="images\linecolor.gif" />
+    <Content Include="images\link.gif" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\middle.gif" />
+    <Content Include="images\new.gif" />
+    <Content Include="images\open.gif" />
+    <Content Include="images\open_end.gif" />
+    <Content Include="images\open_start.gif" />
+    <Content Include="images\outline.gif" />
+    <Content Include="images\oval_end.gif" />
+    <Content Include="images\oval_start.gif" />
+    <Content Include="images\overlays\check.png" />
+    <Content Include="images\overlays\error.png" />
+    <Content Include="images\overlays\flash.png" />
+    <Content Include="images\overlays\forbidden.png" />
+    <Content Include="images\overlays\help.png" />
+    <Content Include="images\overlays\house.png" />
+    <Content Include="images\overlays\information.png" />
+    <Content Include="images\overlays\lightbulb_on.png" />
+    <Content Include="images\overlays\pencil.png" />
+    <Content Include="images\overlays\printer.png" />
+    <Content Include="images\overlays\user3.png" />
+    <Content Include="images\overlays\users3.png" />
+    <Content Include="images\overlays\workplace.png" />
+    <Content Include="images\package.png" />
+    <Content Include="images\pan.gif" />
+    <Content Include="images\paste.gif" />
+    <Content Include="images\plain.gif" />
+    <Content Include="images\preferences.gif" />
+    <Content Include="images\press.gif" />
+    <Content Include="images\preview.gif" />
+    <Content Include="images\print.gif" />
+    <Content Include="images\printer.png" />
+    <Content Include="images\properties.gif" />
+    <Content Include="images\rectangle.gif" />
+    <Content Include="images\redo.gif" />
+    <Content Include="images\refresh.gif" />
+    <Content Include="images\rhombus.gif" />
+    <Content Include="images\right.gif" />
+    <Content Include="images\rounded.gif" />
+    <Content Include="images\save.gif" />
+    <Content Include="images\saveas.gif" />
+    <Content Include="images\script.gif" />
+    <Content Include="images\select.gif" />
+    <Content Include="images\server.png" />
+    <Content Include="images\straight.gif" />
+    <Content Include="images\swimlane.gif" />
+    <Content Include="images\symbols\cancel_end.png" />
+    <Content Include="images\symbols\cancel_intermediate.png" />
+    <Content Include="images\symbols\error.png" />
+    <Content Include="images\symbols\event.png" />
+    <Content Include="images\symbols\event_end.png" />
+    <Content Include="images\symbols\event_intermediate.png" />
+    <Content Include="images\symbols\fork.png" />
+    <Content Include="images\symbols\inclusive.png" />
+    <Content Include="images\symbols\link.png" />
+    <Content Include="images\symbols\merge.png" />
+    <Content Include="images\symbols\message.png" />
+    <Content Include="images\symbols\message_end.png" />
+    <Content Include="images\symbols\message_intermediate.png" />
+    <Content Include="images\symbols\multiple.png" />
+    <Content Include="images\symbols\rule.png" />
+    <Content Include="images\symbols\small_cancel_end.gif" />
+    <Content Include="images\symbols\small_cancel_intermediate.gif" />
+    <Content Include="images\symbols\small_error.gif" />
+    <Content Include="images\symbols\small_event.gif" />
+    <Content Include="images\symbols\small_event_end.gif" />
+    <Content Include="images\symbols\small_event_intermediate.gif" />
+    <Content Include="images\symbols\small_fork.gif" />
+    <Content Include="images\symbols\small_inclusive.gif" />
+    <Content Include="images\symbols\small_link.gif" />
+    <Content Include="images\symbols\small_merge.gif" />
+    <Content Include="images\symbols\small_message.gif" />
+    <Content Include="images\symbols\small_message_end.gif" />
+    <Content Include="images\symbols\small_message_intermediate.gif" />
+    <Content Include="images\symbols\small_multiple.gif" />
+    <Content Include="images\symbols\small_rule.gif" />
+    <Content Include="images\symbols\small_terminate.gif" />
+    <Content Include="images\symbols\small_timer.gif" />
+    <Content Include="images\symbols\terminate.png" />
+    <Content Include="images\symbols\timer.png" />
+    <Content Include="images\tasks.gif" />
+    <Content Include="images\text.gif" />
+    <Content Include="images\toback.gif" />
+    <Content Include="images\tofront.gif" />
+    <Content Include="images\toolbar.gif" />
+    <Content Include="images\top.gif" />
+    <Content Include="images\tree.gif" />
+    <Content Include="images\triangle.gif" />
+    <Content Include="images\underline.gif" />
+    <Content Include="images\undo.gif" />
+    <Content Include="images\ungroup.gif" />
+    <Content Include="images\up.gif" />
+    <Content Include="images\vertical.gif" />
+    <Content Include="images\workplace.png" />
+    <Content Include="images\wrench.png" />
+    <Content Include="images\zoom.gif" />
+    <Content Include="images\zoomactual.gif" />
+    <Content Include="images\zoomin.gif" />
+    <Content Include="images\zoomout.gif" />
+    <Content Include="js\mxApplication.js" />
+    <Content Include="index.html" />
+    <Content Include="resources\mxApplication.txt" />
+    <Content Include="resources\mxApplication_de.txt" />
+    <Content Include="resources\mxApplication_zh.txt" />
+    <Content Include="src\css\common.css" />
+    <Content Include="src\css\explorer.css" />
+    <Content Include="src\images\button.gif" />
+    <Content Include="src\images\close.gif" />
+    <Content Include="src\images\collapsed.gif" />
+    <Content Include="src\images\error.gif" />
+    <Content Include="src\images\expanded.gif" />
+    <Content Include="src\images\maximize.gif" />
+    <Content Include="src\images\minimize.gif" />
+    <Content Include="src\images\normalize.gif" />
+    <Content Include="src\images\point.gif" />
+    <Content Include="src\images\resize.gif" />
+    <Content Include="src\images\separator.gif" />
+    <Content Include="src\images\submenu.gif" />
+    <Content Include="src\images\transparent.gif" />
+    <Content Include="src\images\warning.gif" />
+    <Content Include="src\images\warning.png" />
+    <Content Include="src\images\window-title.gif" />
+    <Content Include="src\images\window.gif" />
+    <Content Include="src\js\editor\mxDefaultKeyHandler.js" />
+    <Content Include="src\js\editor\mxDefaultPopupMenu.js" />
+    <Content Include="src\js\editor\mxDefaultToolbar.js" />
+    <Content Include="src\js\editor\mxEditor.js" />
+    <Content Include="src\js\handler\mxCellHighlight.js" />
+    <Content Include="src\js\handler\mxCellMarker.js" />
+    <Content Include="src\js\handler\mxCellTracker.js" />
+    <Content Include="src\js\handler\mxConnectionHandler.js" />
+    <Content Include="src\js\handler\mxConstraintHandler.js" />
+    <Content Include="src\js\handler\mxEdgeHandler.js" />
+    <Content Include="src\js\handler\mxEdgeSegmentHandler.js" />
+    <Content Include="src\js\handler\mxElbowEdgeHandler.js" />
+    <Content Include="src\js\handler\mxGraphHandler.js" />
+    <Content Include="src\js\handler\mxHandle.js" />
+    <Content Include="src\js\handler\mxKeyHandler.js" />
+    <Content Include="src\js\handler\mxPanningHandler.js" />
+    <Content Include="src\js\handler\mxPopupMenuHandler.js" />
+    <Content Include="src\js\handler\mxRubberband.js" />
+    <Content Include="src\js\handler\mxSelectionCellsHandler.js" />
+    <Content Include="src\js\handler\mxTooltipHandler.js" />
+    <Content Include="src\js\handler\mxVertexHandler.js" />
+    <Content Include="src\js\index.txt" />
+    <Content Include="src\js\io\mxCellCodec.js" />
+    <Content Include="src\js\io\mxChildChangeCodec.js" />
+    <Content Include="src\js\io\mxCodec.js" />
+    <Content Include="src\js\io\mxCodecRegistry.js" />
+    <Content Include="src\js\io\mxDefaultKeyHandlerCodec.js" />
+    <Content Include="src\js\io\mxDefaultPopupMenuCodec.js" />
+    <Content Include="src\js\io\mxDefaultToolbarCodec.js" />
+    <Content Include="src\js\io\mxEditorCodec.js" />
+    <Content Include="src\js\io\mxGenericChangeCodec.js" />
+    <Content Include="src\js\io\mxGraphCodec.js" />
+    <Content Include="src\js\io\mxGraphViewCodec.js" />
+    <Content Include="src\js\io\mxModelCodec.js" />
+    <Content Include="src\js\io\mxObjectCodec.js" />
+    <Content Include="src\js\io\mxRootChangeCodec.js" />
+    <Content Include="src\js\io\mxStylesheetCodec.js" />
+    <Content Include="src\js\io\mxTerminalChangeCodec.js" />
+    <Content Include="src\js\layout\hierarchical\model\mxGraphAbstractHierarchyCell.js" />
+    <Content Include="src\js\layout\hierarchical\model\mxGraphHierarchyEdge.js" />
+    <Content Include="src\js\layout\hierarchical\model\mxGraphHierarchyModel.js" />
+    <Content Include="src\js\layout\hierarchical\model\mxGraphHierarchyNode.js" />
+    <Content Include="src\js\layout\hierarchical\model\mxSwimlaneModel.js" />
+    <Content Include="src\js\layout\hierarchical\mxHierarchicalLayout.js" />
+    <Content Include="src\js\layout\hierarchical\mxSwimlaneLayout.js" />
+    <Content Include="src\js\layout\hierarchical\stage\mxCoordinateAssignment.js" />
+    <Content Include="src\js\layout\hierarchical\stage\mxHierarchicalLayoutStage.js" />
+    <Content Include="src\js\layout\hierarchical\stage\mxMedianHybridCrossingReduction.js" />
+    <Content Include="src\js\layout\hierarchical\stage\mxMinimumCycleRemover.js" />
+    <Content Include="src\js\layout\hierarchical\stage\mxSwimlaneOrdering.js" />
+    <Content Include="src\js\layout\mxCircleLayout.js" />
+    <Content Include="src\js\layout\mxCompactTreeLayout.js" />
+    <Content Include="src\js\layout\mxCompositeLayout.js" />
+    <Content Include="src\js\layout\mxEdgeLabelLayout.js" />
+    <Content Include="src\js\layout\mxFastOrganicLayout.js" />
+    <Content Include="src\js\layout\mxGraphLayout.js" />
+    <Content Include="src\js\layout\mxParallelEdgeLayout.js" />
+    <Content Include="src\js\layout\mxPartitionLayout.js" />
+    <Content Include="src\js\layout\mxRadialTreeLayout.js" />
+    <Content Include="src\js\layout\mxStackLayout.js" />
+    <Content Include="src\js\model\mxCell.js" />
+    <Content Include="src\js\model\mxCellPath.js" />
+    <Content Include="src\js\model\mxGeometry.js" />
+    <Content Include="src\js\model\mxGraphModel.js" />
+    <Content Include="src\js\mxClient.js" />
+    <Content Include="src\js\shape\mxActor.js" />
+    <Content Include="src\js\shape\mxArrow.js" />
+    <Content Include="src\js\shape\mxArrowConnector.js" />
+    <Content Include="src\js\shape\mxCloud.js" />
+    <Content Include="src\js\shape\mxConnector.js" />
+    <Content Include="src\js\shape\mxCylinder.js" />
+    <Content Include="src\js\shape\mxDoubleEllipse.js" />
+    <Content Include="src\js\shape\mxEllipse.js" />
+    <Content Include="src\js\shape\mxHexagon.js" />
+    <Content Include="src\js\shape\mxImageShape.js" />
+    <Content Include="src\js\shape\mxLabel.js" />
+    <Content Include="src\js\shape\mxLine.js" />
+    <Content Include="src\js\shape\mxMarker.js" />
+    <Content Include="src\js\shape\mxPolyline.js" />
+    <Content Include="src\js\shape\mxRectangleShape.js" />
+    <Content Include="src\js\shape\mxRhombus.js" />
+    <Content Include="src\js\shape\mxShape.js" />
+    <Content Include="src\js\shape\mxStencil.js" />
+    <Content Include="src\js\shape\mxStencilRegistry.js" />
+    <Content Include="src\js\shape\mxSwimlane.js" />
+    <Content Include="src\js\shape\mxText.js" />
+    <Content Include="src\js\shape\mxTriangle.js" />
+    <Content Include="src\js\util\mxAbstractCanvas2D.js" />
+    <Content Include="src\js\util\mxAnimation.js" />
+    <Content Include="src\js\util\mxAutoSaveManager.js" />
+    <Content Include="src\js\util\mxClipboard.js" />
+    <Content Include="src\js\util\mxConstants.js" />
+    <Content Include="src\js\util\mxDictionary.js" />
+    <Content Include="src\js\util\mxDivResizer.js" />
+    <Content Include="src\js\util\mxDragSource.js" />
+    <Content Include="src\js\util\mxEffects.js" />
+    <Content Include="src\js\util\mxEvent.js" />
+    <Content Include="src\js\util\mxEventObject.js" />
+    <Content Include="src\js\util\mxEventSource.js" />
+    <Content Include="src\js\util\mxForm.js" />
+    <Content Include="src\js\util\mxGuide.js" />
+    <Content Include="src\js\util\mxImage.js" />
+    <Content Include="src\js\util\mxImageBundle.js" />
+    <Content Include="src\js\util\mxImageExport.js" />
+    <Content Include="src\js\util\mxLog.js" />
+    <Content Include="src\js\util\mxMorphing.js" />
+    <Content Include="src\js\util\mxMouseEvent.js" />
+    <Content Include="src\js\util\mxObjectIdentity.js" />
+    <Content Include="src\js\util\mxPanningManager.js" />
+    <Content Include="src\js\util\mxPoint.js" />
+    <Content Include="src\js\util\mxPopupMenu.js" />
+    <Content Include="src\js\util\mxRectangle.js" />
+    <Content Include="src\js\util\mxResources.js" />
+    <Content Include="src\js\util\mxSvgCanvas2D.js" />
+    <Content Include="src\js\util\mxToolbar.js" />
+    <Content Include="src\js\util\mxUndoableEdit.js" />
+    <Content Include="src\js\util\mxUndoManager.js" />
+    <Content Include="src\js\util\mxUrlConverter.js" />
+    <Content Include="src\js\util\mxUtils.js" />
+    <Content Include="src\js\util\mxVmlCanvas2D.js" />
+    <Content Include="src\js\util\mxWindow.js" />
+    <Content Include="src\js\util\mxXmlCanvas2D.js" />
+    <Content Include="src\js\util\mxXmlRequest.js" />
+    <Content Include="src\js\view\mxCellEditor.js" />
+    <Content Include="src\js\view\mxCellOverlay.js" />
+    <Content Include="src\js\view\mxCellRenderer.js" />
+    <Content Include="src\js\view\mxCellState.js" />
+    <Content Include="src\js\view\mxCellStatePreview.js" />
+    <Content Include="src\js\view\mxConnectionConstraint.js" />
+    <Content Include="src\js\view\mxEdgeStyle.js" />
+    <Content Include="src\js\view\mxGraph.js" />
+    <Content Include="src\js\view\mxGraphSelectionModel.js" />
+    <Content Include="src\js\view\mxGraphView.js" />
+    <Content Include="src\js\view\mxLayoutManager.js" />
+    <Content Include="src\js\view\mxMultiplicity.js" />
+    <Content Include="src\js\view\mxOutline.js" />
+    <Content Include="src\js\view\mxPerimeter.js" />
+    <Content Include="src\js\view\mxPrintPreview.js" />
+    <Content Include="src\js\view\mxStyleRegistry.js" />
+    <Content Include="src\js\view\mxStylesheet.js" />
+    <Content Include="src\js\view\mxSwimlaneManager.js" />
+    <Content Include="src\js\view\mxTemporaryCellStates.js" />
+    <Content Include="src\resources\editor.txt" />
+    <Content Include="src\resources\editor_de.txt" />
+    <Content Include="src\resources\editor_zh.txt" />
+    <Content Include="src\resources\graph.txt" />
+    <Content Include="src\resources\graph_de.txt" />
+    <Content Include="src\resources\graph_zh.txt" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63462</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63462/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
